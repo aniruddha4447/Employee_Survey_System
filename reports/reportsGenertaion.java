@@ -3,21 +3,18 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.swing.JRViewer;
-import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.sql.*;
 import java.util.HashMap;
 
-class Gui extends JFrame implements ActionListener {
+class reportsGeneration extends JFrame implements ActionListener {
 
 
     private Object ClassNotFoundException;
@@ -149,7 +146,7 @@ class Gui extends JFrame implements ActionListener {
 class CommanGuiManual
 {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Gui gui =new Gui();
-        gui.PanelExample();
+        reportsGeneration reportsGeneration =new reportsGeneration();
+        reportsGeneration.PanelExample();
     }
 }
