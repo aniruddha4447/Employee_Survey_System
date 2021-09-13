@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/UtilityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/UtilityFunctions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +58,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.MainPanelGUI" />
       <item itemvalue="Application.MainManagerGUI" />
+      <item itemvalue="Maven.MainPanelGUI" />
     </list>
     <recent_temporary>
       <list>
@@ -88,5 +88,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

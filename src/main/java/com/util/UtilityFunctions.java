@@ -23,5 +23,11 @@ public class UtilityFunctions {
         return outputString;
     }
 
+    static public Connection createConnection() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_portfolio", "root", "Mayur$4321");
+        return conn;
+    }
+
     
 }
