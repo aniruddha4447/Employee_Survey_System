@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Admin GUI login merged">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/util/UtilityFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/util/UtilityFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,18 +129,18 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.QuestionGui" />
-      <item itemvalue="Application.LoginPage" />
-      <item itemvalue="Application.MainAdminGUI" />
       <item itemvalue="Application.Createuser" />
       <item itemvalue="Application.Editprofile" />
+      <item itemvalue="Application.LoginPage" />
+      <item itemvalue="Application.MainAdminGUI" />
+      <item itemvalue="Application.QuestionGui" />
       <item itemvalue="Maven.MainPanelGUI" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoginPage" />
-        <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.Createuser" />
+        <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.Editprofile" />
         <item itemvalue="Application.QuestionGui" />
       </list>
@@ -175,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631624535747</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Admin GUI login merged">
+      <created>1631624650554</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631624650554</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -28,28 +28,21 @@ private PreparedStatement preparedStatement;
 private ResultSet roleNameFetching;
 public JFrame queFrame;
 public JFrame frame;
-
-
 protected String LoginUsername;
 protected String LoginPassword;
 
 
-
-
-
 LoginPage() {
     initComponents();
-
 }
 
 @Override
-public void initComponents()
-{
+public void initComponents(){
+
     AllButtonsLoginPage buttonsCallingObj = new AllButtonsLoginPage();
     AllLabelsLoginPage labelsCallingObj=new AllLabelsLoginPage();
     AllTextFieldsLoginPage textFieldsCallingObj = new AllTextFieldsLoginPage();
     AllFramesAndPanels userFramesAndPanelsObj =new AllFramesAndPanels();
-
 
     loginFrame=new AllFrameLoginPage().putLoginPageFrame();
     queFrame=userFramesAndPanelsObj.putFrame();
@@ -59,19 +52,13 @@ public void initComponents()
     userNameLabel=labelsCallingObj.putUsernameLabel();
     loginFrame.add(userNameLabel);
 
-
-
     passwordLabel=labelsCallingObj.putPasswordLabel();
     loginFrame.add(passwordLabel);
-
-
 
     //Calling created TextFields methods from AllTextFieldsLoginPage.java
 
     userNameField=textFieldsCallingObj.putUsernameTextField();
     loginFrame.add(userNameField);
-
-
 
     passwordField=textFieldsCallingObj.putPasswordField();
     loginFrame.add(passwordField);
@@ -80,8 +67,6 @@ public void initComponents()
 
     loginButton= buttonsCallingObj.putLoginButton();
     loginFrame.add(loginButton);
-
-
     loginButton.addActionListener(e -> {
 
         //calling login button actionListener method
@@ -129,19 +114,24 @@ public void initComponents()
     {
         try{
             Connection connection= UtilityFunctions.createConnection();
-            String username=userNameField.getText();
+
+            String username = userNameField.getText();
             LoginUsername=username;
-            String password= encryptDecrypt( new String(passwordField.getPassword()));
+
+            String password= UtilityFunctions.encryptDecrypt( new String(passwordField.getPassword()));
             LoginPassword=password;
+
             preparedStatement = connection.prepareStatement("select role_name from users where user_name= ? and password= ?");
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
+
             //ResultSet idFetching ;
             roleNameFetching = preparedStatement.executeQuery();
 
             if(roleNameFetching.next())
             {
                     String role_name= roleNameFetching.getString(1);
+                    System.out.println(role_name);
                     if(role_name.equalsIgnoreCase("admin"))
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
