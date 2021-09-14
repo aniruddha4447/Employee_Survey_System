@@ -167,8 +167,7 @@ public void initComponents()
             else
             {
                 JOptionPane.showMessageDialog(loginPagePanel,"Enter Valid username and password","ERROR",JOptionPane.ERROR_MESSAGE);
-                userNameField.setText("");
-                passwordField.setText("");
+
             }
         }
         catch (SQLException | ClassNotFoundException exception)
