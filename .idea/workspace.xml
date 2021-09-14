@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Admin GUI login merged">
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Admin GUI login merged" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
