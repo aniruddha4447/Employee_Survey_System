@@ -17,6 +17,10 @@ public class MainAdminGUI extends JFrame {
     JButton Create, Editprofile,Createsurvey,Pendingtask;
     JLabel title;
 
+    public MainAdminGUI()
+    {
+        PanelExample();
+    }
 
 
 
