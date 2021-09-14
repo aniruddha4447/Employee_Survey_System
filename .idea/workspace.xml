@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/MainUserGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/frames/AllFrameLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/framesAndPanels/AllFrameLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/MainAdminGUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/util/UtilityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/UtilityFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainManagerGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainManagerGUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainManagerGUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainManagerGUI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/util/UtilityFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/util/UtilityFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/viewReports_1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/viewReports_1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/viewReports_1.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.LoginPage">
     <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -110,8 +102,8 @@
     <list>
       <item itemvalue="Application.MainManagerGUI" />
       <item itemvalue="Application.QuestionGui" />
-      <item itemvalue="Maven.MainPanelGUI" />
       <item itemvalue="Application.LoginPage" />
+      <item itemvalue="Maven.MainPanelGUI" />
     </list>
     <recent_temporary>
       <list>

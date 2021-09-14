@@ -1,5 +1,6 @@
 package LoginPage;
 
+import AdminPackage.MainAdminGUI;
 import UserPackage.MainUserGUI;
 import com.buttons.AllButtonsLoginPage;
 import com.framesAndPanels.AllFrameLoginPage;
@@ -26,6 +27,7 @@ private JButton loginButton,resetButton,exitButton;
 private PreparedStatement preparedStatement;
 private ResultSet roleNameFetching;
 public JFrame queFrame;
+public JFrame frame;
 
 
 protected String LoginUsername;
@@ -131,7 +133,7 @@ public void initComponents()
             LoginUsername=username;
             String password= encryptDecrypt( new String(passwordField.getPassword()));
             LoginPassword=password;
-            preparedStatement = connection.prepareStatement("select role from users where Username= ? and Password= ?");
+            preparedStatement = connection.prepareStatement("select role_name from usertable where user_name= ? and password= ?");
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
             //ResultSet idFetching ;
@@ -144,7 +146,8 @@ public void initComponents()
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
                         mainAdminGUI.setVisible(true);
-                        loginFrame.setVisible(false);
+                        mainAdminGUI.PanelExample();
+                       // frame.setVisible(false);
                     }
                     else if(role_name.equalsIgnoreCase("developer"))
                     {
