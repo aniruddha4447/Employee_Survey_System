@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: localhost    Database: survey_portfolio
+-- Host: 127.0.0.1    Database: survey_system
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -16,29 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `questions_has_survey`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `questions_has_survey`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `questions_has_survey` (
-  `questions_ques_id` int DEFAULT NULL,
-  `survey_survey_id` int DEFAULT NULL,
-  KEY `questions_ques_id` (`questions_ques_id`),
-  KEY `survey_survey_id` (`survey_survey_id`),
-  CONSTRAINT `questions_has_survey_ibfk_1` FOREIGN KEY (`questions_ques_id`) REFERENCES `questions` (`ques_id`),
-  CONSTRAINT `questions_has_survey_ibfk_2` FOREIGN KEY (`survey_survey_id`) REFERENCES `survey` (`survey_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(16) DEFAULT NULL,
+  `user_email` varchar(26) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `phone_no` varchar(20) DEFAULT NULL,
+  `role_name` varchar(20) DEFAULT NULL,
+  `gender` varchar(20) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `status` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `questions_has_survey`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `questions_has_survey` WRITE;
-/*!40000 ALTER TABLE `questions_has_survey` DISABLE KEYS */;
-/*!40000 ALTER TABLE `questions_has_survey` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'somu','somu@gmail.com','1223','1234567890','admin','male','Nashik','');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-13 10:12:16
+-- Dump completed on 2021-09-14 16:39:30

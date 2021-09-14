@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: localhost    Database: survey_portfolio
+-- Host: 127.0.0.1    Database: survey_system
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `survey_responses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `survey_responses` (
-  `resp_id` int NOT NULL,
+  `resp_id` int NOT NULL AUTO_INCREMENT,
   `resp_submission_date` date DEFAULT NULL,
   `performance` varchar(16) DEFAULT NULL,
   `comments` varchar(45) DEFAULT NULL,
   `survey_survey_id` int DEFAULT NULL,
   `users_user_id` int DEFAULT NULL,
   PRIMARY KEY (`resp_id`),
-  KEY `users_user_id` (`users_user_id`),
-  KEY `survey_survey_id` (`survey_survey_id`),
+  KEY `survey_responses_ibfk_1` (`users_user_id`),
+  KEY `survey_responses_ibfk_2` (`survey_survey_id`),
   CONSTRAINT `survey_responses_ibfk_1` FOREIGN KEY (`users_user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `survey_responses_ibfk_2` FOREIGN KEY (`survey_survey_id`) REFERENCES `survey` (`survey_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -43,7 +43,6 @@ CREATE TABLE `survey_responses` (
 
 LOCK TABLES `survey_responses` WRITE;
 /*!40000 ALTER TABLE `survey_responses` DISABLE KEYS */;
-INSERT INTO `survey_responses` VALUES (1,'2021-01-01','good','none',1,1),(2,'2021-02-01','excellent ','nice',2,2);
 /*!40000 ALTER TABLE `survey_responses` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-13 10:12:16
+-- Dump completed on 2021-09-14 16:39:30
