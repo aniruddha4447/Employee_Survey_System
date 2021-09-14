@@ -1,7 +1,7 @@
 package AdminPackage;
 
 
-
+import com.util.UtilityFunctions;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -28,18 +28,18 @@ public class Editprofile extends JFrame implements ActionListener {
 
 
     PreparedStatement p;
-    Connection con;
+    Connection conn;
 
     String reg = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     // boolean result = email.matches(reg);
     String REG = "^(?=.*\\d)(?=\\S+$)(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,10}$";
     final Pattern PATTERN = Pattern.compile(REG);
 
-    public void connection() throws SQLException, ClassNotFoundException {
+   /* public void connection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_portfolio", "root", "pkha14@21");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/survey_portfolio", "Aress", "Aress@aress123");
         System.out.println("Connected to Database");
-    }
+    }*/
 
     public Editprofile() {
         f = new JFrame("Edit Profile");
@@ -102,7 +102,7 @@ public class Editprofile extends JFrame implements ActionListener {
 
 
         //showdetails= new JButton("Show details");
-        //showdetails.setBounds(50, 600, 100, 30);
+        //showdetails.setBounds(680, 600, 100, 30);
         update= new JButton("Update");
         update.setBounds(80, 600, 100, 30);
         deleteb = new JButton("Delete");
@@ -138,7 +138,7 @@ public class Editprofile extends JFrame implements ActionListener {
 
 
        // panel.add(showdetails);
-        //showdetails.addActionListener(this);
+       // showdetails.addActionListener(this);
         Email.addKeyListener(new KeyListener() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -175,11 +175,11 @@ public class Editprofile extends JFrame implements ActionListener {
             updatemethod();
         }
          else if (event.getSource() == deleteb) {
-             deletemethod();
-         }
+           deletemethod();
+        }
         /*else if(event.getSource()==showdetails)
         {
-              showdetails();
+           showdetails();
         }*/
         else if (event.getSource()==cancel)
         {
@@ -216,7 +216,7 @@ public class Editprofile extends JFrame implements ActionListener {
         }
 
     }
-    public void encryptdecryptpwd(String str) {
+   /* public void encryptdecryptpwd(String str) {
         // Define XOR key
         // Any character value will work
         char xorKey = 'P';
@@ -237,7 +237,7 @@ public class Editprofile extends JFrame implements ActionListener {
 
         System.out.println(outputString);
 
-    }
+    }*/
 
     public void getValuefromGui() {
 
@@ -245,6 +245,7 @@ public class Editprofile extends JFrame implements ActionListener {
         Pno = Phno.getText();
         Addr = Add.getText();
         email = Email.getText();
+        System.out.println(email);
 
         if (male.isSelected())
             Gval = "Male";
@@ -272,7 +273,7 @@ public class Editprofile extends JFrame implements ActionListener {
             male.setSelected(true);
         }
          passw=String.valueOf(pass);
-        encryptdecryptpwd(passw);
+        outputString=UtilityFunctions.encryptDecrypt(passw);
         p1.setText(outputString);
 
     }
@@ -281,7 +282,8 @@ public class Editprofile extends JFrame implements ActionListener {
        getValuefromGui();
 
         try {
-            p = con.prepareStatement("select user_email from usertable where user_email='" + email+ "'    ");
+            Connection connection= UtilityFunctions.createConnection();
+            p = connection.prepareStatement("select user_email from users where user_email='" + email+ "'    ");
             ResultSet rs = p.executeQuery();
 
             while (rs.next()) {
@@ -292,7 +294,8 @@ public class Editprofile extends JFrame implements ActionListener {
             }
             if(email.equals(em))
             {
-                p = con.prepareStatement("select * from usertable where user_email='" + email + "'    ");
+
+                p = connection.prepareStatement("select * from users where user_email='" + email + "'    ");
                 ResultSet rs1 = p.executeQuery();
 
                 while (rs1.next()) {
@@ -314,7 +317,7 @@ public class Editprofile extends JFrame implements ActionListener {
             }
 
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -348,16 +351,18 @@ public class Editprofile extends JFrame implements ActionListener {
                             {
                                 userstatus="Pending";
                             }
-                            encryptdecryptpwd(pwd);
-                            String up = "update usertable set user_name='" + Namet.getText() + "',user_email='" + Email.getText() + "' ,password='" + outputString + "',phone_no='" + Phno.getText() + "',role_name='" + Rolecb.getSelectedItem().toString() + "',gender='" + Gval + "',address='" + Add.getText() + "',status='"+userstatus+"' where user_Email='" +  Email.getText() + "' ";
-                            p = con.prepareStatement(up);
+                            Connection connection= UtilityFunctions.createConnection();
+                            outputString=UtilityFunctions.encryptDecrypt(pwd);
+                            //encryptdecryptpwd(pwd);
+                            String up = "update users set user_name='" + Namet.getText() + "',user_email='" + Email.getText() + "' ,password='" + outputString + "',phone_no='" + Phno.getText() + "',role_name='" + Rolecb.getSelectedItem().toString() + "',gender='" + Gval + "',address='" + Add.getText() + "',status='"+userstatus+"' where user_Email='" +  Email.getText() + "' ";
+                            p = connection.prepareStatement(up);
                             p.execute();
                             JOptionPane.showMessageDialog(f,
                                     "User Details Updated Successfully");
                             System.out.println("Record updated Successfully ");
 
 
-                        } catch (SQLException e) {
+                        } catch (SQLException | ClassNotFoundException e) {
                             e.printStackTrace();
                         }
                     } else {
@@ -384,8 +389,7 @@ public class Editprofile extends JFrame implements ActionListener {
 
     }
 
-    public void deletemethod()
-    {
+    public void deletemethod() {
         showdetails();
 
         getValuefromGui();
@@ -403,17 +407,17 @@ public class Editprofile extends JFrame implements ActionListener {
 
 
                         try {
+                            Connection connection= UtilityFunctions.createConnection();
+                            String del = "delete from users where user_Email='" +Email.getText() + "' ";
 
-                            String del = "delete from usertable where user_Email='" +Email.getText() + "' ";
-
-                            p = con.prepareStatement(del);
+                            p =connection.prepareStatement(del);
                             p.execute();
                             JOptionPane.showMessageDialog(f,
                                     "User Details Deleted Successfully");
                             System.out.println("Record Deleted Successfully ");
 
 
-                        } catch (SQLException e) {
+                        } catch (SQLException | ClassNotFoundException e) {
                             e.printStackTrace();
                         }
                     } else {
@@ -444,7 +448,7 @@ public class Editprofile extends JFrame implements ActionListener {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Editprofile e=new Editprofile();
-        e.connection();
+       // e.connection();
 
     }
 

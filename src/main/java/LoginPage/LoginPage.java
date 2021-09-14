@@ -133,7 +133,7 @@ public void initComponents()
             LoginUsername=username;
             String password= encryptDecrypt( new String(passwordField.getPassword()));
             LoginPassword=password;
-            preparedStatement = connection.prepareStatement("select role_name from usertable where user_name= ? and password= ?");
+            preparedStatement = connection.prepareStatement("select role_name from users where user_name= ? and password= ?");
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
             //ResultSet idFetching ;

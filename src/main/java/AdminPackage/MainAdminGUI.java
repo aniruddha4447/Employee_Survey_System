@@ -14,38 +14,26 @@ import java.util.regex.Pattern;
 public class MainAdminGUI extends JFrame {
     JFrame frame;
     JPanel buttonPanel, topPanel, mainPanel, editPanel, createPanel;
-    JButton Create, Editprofile;
+    JButton Create, Editprofile,Createsurvey,Pendingtask;
     JLabel title;
-    Statement s;
-    /**********************************************************/
-    JPasswordField p1, p2;
-    JPanel panel1;
-    JLabel title1, IDLabel, NameLabel, PhnoLabel, RoleLabel, gender, AddressLabel, Password, Confirmpass, EmailLabel;
-    JTextArea Add;
-    JTextField ID, Namet, Phno, Email;
-    JRadioButton male, female;
-    JComboBox Rolecb;
-    JFrame f;
-    JPanel panel;
-    private JButton submit, deleteb, reset, update, cancelb, cancel, showdetails;
-
-    String Username, Addr, Pno, Rolval, Gval, pwd, email, Cpwd;
-    String outputString, inputString, em, nm, pass, phno, rnm, gen, addr, passw;
 
 
-    PreparedStatement p;
-    Connection con;
+
+
+
+
+    Connection conn;
 
     String reg = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     // boolean result = email.matches(reg);
     String REG = "^(?=.*\\d)(?=\\S+$)(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,10}$";
     final Pattern PATTERN = Pattern.compile(REG);
 
-    public void connection() throws SQLException, ClassNotFoundException {
+   /* public void connection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_portfolio", "root", "pkha14@21");
+        Connection conn= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/survey_portfolio", "Aress", "Aress@aress123");
         System.out.println("Connected to Database");
-    }
+    }*/
 
     public void PanelExample() {
         frame = new JFrame("Admin Module");
@@ -57,6 +45,9 @@ public class MainAdminGUI extends JFrame {
         JScrollBar scroll = new JScrollBar(JScrollBar.HORIZONTAL);
         Create = new JButton("Create User");
         Editprofile = new JButton("Edit Profile");
+        Createsurvey = new JButton("Create Survey");
+        Pendingtask=new JButton("Pending Task");
+
 
         // Panels Code
         frame.setLayout(null);
@@ -75,6 +66,12 @@ public class MainAdminGUI extends JFrame {
         Create.setBackground(Color.lightGray);
         Editprofile.setBounds(30, 230, 180, 40);
         Editprofile.setBackground(Color.lightGray);
+        Createsurvey.setBounds(30, 310, 180, 40);
+        Createsurvey.setBackground(Color.lightGray);
+        Pendingtask.setBounds(30, 390, 180, 40);
+       Pendingtask.setBackground(Color.lightGray);
+
+
 
         //Label Code
         title = new JLabel("ADMIN ");
@@ -85,6 +82,8 @@ public class MainAdminGUI extends JFrame {
         // Add Panels and Buttons on the Frame
         buttonPanel.add(Create);
         buttonPanel.add(Editprofile);
+        buttonPanel.add(Createsurvey);
+        buttonPanel.add(Pendingtask);
         topPanel.add(title);
         frame.add(mainPanel);
         frame.add(editPanel);
@@ -124,19 +123,19 @@ public class MainAdminGUI extends JFrame {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         MainAdminGUI gui = new MainAdminGUI();
         gui.PanelExample();
-        gui.connection();
+       // gui.connection();
     }
 
 
    public void Createu() throws SQLException, ClassNotFoundException {
         Createuser cu=new Createuser();
-        cu.connection();
+       // cu.connection();
 
     }
 
     public void Editu() throws SQLException, ClassNotFoundException {
           Editprofile ep=new Editprofile();
-           ep.connection();
+          // ep.connection();
     }
 
 

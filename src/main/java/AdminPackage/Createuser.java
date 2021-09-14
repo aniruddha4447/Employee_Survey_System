@@ -1,11 +1,14 @@
 package AdminPackage;
 
 
+import com.util.UtilityFunctions;
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 import java.sql.*;
 import java.util.regex.Pattern;
+
 
 public class Createuser extends JFrame implements ActionListener {
 
@@ -28,7 +31,7 @@ public class Createuser extends JFrame implements ActionListener {
 
 
     PreparedStatement p;
-    Connection con;
+    Connection conn;
 
 
     String reg = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
@@ -39,11 +42,12 @@ public class Createuser extends JFrame implements ActionListener {
     private String NUll;
 
 
-    public void connection() throws SQLException, ClassNotFoundException {
+  /*  public Connection connection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_portfolio", "root", "pkha14@21");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/survey_portfolio", "Aress", "Aress@aress123");
         System.out.println("Connected to Database");
-    }
+        return conn;
+    }*/
 
     public Createuser() {
         f = new JFrame("Create New User");
@@ -207,13 +211,14 @@ public class Createuser extends JFrame implements ActionListener {
                                    userstatus="Pending";
                                }
 
-                            encryptpwd();
+                            Connection connection= UtilityFunctions.createConnection();
+                               outputString=UtilityFunctions.encryptDecrypt(pwd);
 
-                            String query = "insert into usertable (user_name,user_email,password,phone_no,role_name,gender,address,status)  values('" + Username + "','" + email + "','" + outputString + "','" +
+                            String query = "insert into users (user_name,user_email,password,phone_no,role_name,gender,address,status)  values('" + Username + "','" + email + "','" + outputString + "','" +
 
                                          Pno + "','" + Rolval + "','" + Gval + "','" + Addr + "','"+userstatus+"')";
 
-                                 p = con.prepareStatement(query);
+                                 p = connection.prepareStatement(query);
                                  boolean x = false;
                                  if (x == p.execute()) {
                                      System.out.println("Record Successfully Inserted");
@@ -225,7 +230,7 @@ public class Createuser extends JFrame implements ActionListener {
 
 
 
-                        } catch (SQLException e) {
+                        } catch (SQLException | ClassNotFoundException e) {
                             e.printStackTrace();
                         }
                     } else {
@@ -291,7 +296,7 @@ public class Createuser extends JFrame implements ActionListener {
     }
 
 
-    public void encryptpwd() {
+    /*public void encryptpwd() {
             // Define XOR key
             // Any character value will work
 
@@ -312,13 +317,13 @@ public class Createuser extends JFrame implements ActionListener {
             System.out.println(outputString);
 
 
-        }
+        }*/
 
 
         public static void main(String[] args) throws SQLException, ClassNotFoundException
         {
         Createuser e=new Createuser();
-        e.connection();
+      // e.connection();
 
     }
 
