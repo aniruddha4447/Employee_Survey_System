@@ -1,7 +1,9 @@
 package LoginPage;
 
+import UserPackage.MainUserGUI;
 import com.buttons.AllButtonsLoginPage;
-import com.frames.AllFrameLoginPage;
+import com.framesAndPanels.AllFrameLoginPage;
+import com.framesAndPanels.AllFramesAndPanels;
 import com.labels.AllLabelsLoginPage;
 import com.textFields.AllTextFieldsLoginPage;
 import com.util.InitiateComponents;
@@ -23,6 +25,8 @@ private JPasswordField passwordField;
 private JButton loginButton,resetButton,exitButton;
 private PreparedStatement preparedStatement;
 private ResultSet roleNameFetching;
+public JFrame queFrame;
+
 
 protected String LoginUsername;
 protected String LoginPassword;
@@ -42,9 +46,11 @@ public void initComponents()
     AllButtonsLoginPage buttonsCallingObj = new AllButtonsLoginPage();
     AllLabelsLoginPage labelsCallingObj=new AllLabelsLoginPage();
     AllTextFieldsLoginPage textFieldsCallingObj = new AllTextFieldsLoginPage();
+    AllFramesAndPanels userFramesAndPanelsObj =new AllFramesAndPanels();
+
 
     loginFrame=new AllFrameLoginPage().putLoginPageFrame();
-
+    queFrame=userFramesAndPanelsObj.putFrame();
 
     // Calling created label methods from AllLabelsLoginPage.java
 
@@ -120,7 +126,7 @@ public void initComponents()
     private void loginButtonActionListener()
     {
         try{
-            Connection connection= UtilityFunctions.getConnection();
+            Connection connection= UtilityFunctions.createConnection();
             String username=userNameField.getText();
             LoginUsername=username;
             String password= encryptDecrypt( new String(passwordField.getPassword()));
@@ -145,6 +151,7 @@ public void initComponents()
                         MainUserGUI mainUserGUI=new MainUserGUI();
                         mainUserGUI.setVisible(true);
                         loginFrame.setVisible(false);
+                        
                     }
                     else if(role_name.equalsIgnoreCase("manager"))
                     {

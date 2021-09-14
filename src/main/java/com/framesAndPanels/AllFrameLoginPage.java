@@ -1,4 +1,4 @@
-package com.frames;
+package com.framesAndPanels;
 
 import javax.swing.*;
 import java.awt.*;
