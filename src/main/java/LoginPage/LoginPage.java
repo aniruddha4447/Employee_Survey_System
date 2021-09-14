@@ -147,7 +147,7 @@ public void initComponents()
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
                         mainAdminGUI.setVisible(true);
                         mainAdminGUI.PanelExample();
-                       // frame.setVisible(false);
+                        loginFrame.setVisible(false);
                     }
                     else if(role_name.equalsIgnoreCase("developer"))
                     {
