@@ -69,9 +69,12 @@ public class MainAdminGUI extends JFrame {
         mainPanel.setBackground(Color.WHITE);
 
         //pending panel
+        /*
         pendingPanel.setBounds(251, 120, 1451, 629);
         mainPanel.setBackground(Color.LIGHT_GRAY);
+        */
         // Buttons Code
+
         Create.setBounds(30, 150, 180, 40);
         Create.setBackground(Color.lightGray);
         Editprofile.setBounds(30, 230, 180, 40);
@@ -96,7 +99,7 @@ public class MainAdminGUI extends JFrame {
         buttonPanel.add(Pendingtask);
         topPanel.add(title);
         frame.add(pendingPanel);
-        pendingPanel.setVisible(false);
+        //pendingPanel.setVisible(false);
         frame.add(mainPanel);
         frame.add(editPanel);
         frame.add(createPanel);
@@ -137,7 +140,7 @@ public class MainAdminGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     AdminPendingTask adminPendingTask=new AdminPendingTask();
-                    pendingPanel.setVisible(true);
+
 
                 } catch (SQLException ex) {
                     ex.printStackTrace();

@@ -46,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="D:/IntelliJ/DummyCodes" />
   </component>
-  <component name="RunManager" selected="Application.MainAdminGUI">
+  <component name="RunManager" selected="Application.LoginPage">
     <configuration name="AdminPendingTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdminPackage.pendingTask.AdminPendingTask" />
       <module name="Employee_Survey_System" />
@@ -145,9 +145,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.LoginPage" />
         <item itemvalue="Application.AdminPendingTask" />
+        <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.Createuser" />
         <item itemvalue="Application.Editprofile" />
       </list>
