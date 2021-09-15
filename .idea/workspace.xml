@@ -133,8 +133,8 @@
       <item itemvalue="Application.Editprofile" />
       <item itemvalue="Application.LoginPage" />
       <item itemvalue="Application.MainAdminGUI" />
-      <item itemvalue="Maven.MainPanelGUI" />
       <item itemvalue="Application.AdminPendingTask" />
+      <item itemvalue="Maven.MainPanelGUI" />
     </list>
     <recent_temporary>
       <list>
