@@ -1,6 +1,7 @@
 package LoginPage;
 
 import AdminPackage.MainAdminGUI;
+import ManagerPackage.MainManagerGUI;
 import UserPackage.MainUserGUI;
 import com.buttons.AllButtonsLoginPage;
 import com.framesAndPanels.AllFrameLoginPage;
@@ -148,7 +149,7 @@ public void initComponents(){
                     else if(role_name.equalsIgnoreCase("manager"))
                     {
                         MainManagerGUI mainManagerGUI=new MainManagerGUI();
-                        mainManagerGUI.setVisible(true);
+                        //mainManagerGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
 
