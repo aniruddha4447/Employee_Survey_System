@@ -498,12 +498,13 @@ public class MainManagerGUI extends JFrame
                     try {
                         Connection connection= UtilityFunctions.createConnection();
                         encryptdecryptpwd(pwd);
-                        String up = "update users set user_name='" + tfName.getText() + "',user_email='" + tfEmail.getText() + "' ,password='" + outputString + "',phone_no='" + tfPhone.getText() + "',role_name='" + role_combo.getSelectedItem().toString() + "',gender='" + Gval + "',address='" + tadd.getText() + "' where user_id='" +  tfId.getText() + "' ";
-                        p = con.prepareStatement(up);
+                        String up = "update users set user_name='" + tfName.getText() + "',user_email='" + tfEmail.getText() + "' ,password='" + outputString + "',phone_no='" + tfPhone.getText()+ "',gender='" + Gval + "',address='" + tadd.getText() + "' where user_id='" +  tfId.getText() + "' ";
+                        p = connection.prepareStatement(up);
                         p.execute();
                         JOptionPane.showMessageDialog(f,
                                 "User Details Updated Successfully");
                         System.out.println("Record updated Successfully ");
+                        editPanel.setVisible(false);
 
 
                     } catch (SQLException | ClassNotFoundException e) {

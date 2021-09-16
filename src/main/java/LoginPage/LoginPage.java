@@ -136,20 +136,27 @@ public void initComponents(){
                     if(role_name.equalsIgnoreCase("admin"))
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
-                        mainAdminGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
                     else if(role_name.equalsIgnoreCase("developer"))
                     {
                         MainUserGUI mainUserGUI=new MainUserGUI();
-                        mainUserGUI.setVisible(true);
                         loginFrame.setVisible(false);
                         
                     }
                     else if(role_name.equalsIgnoreCase("manager"))
                     {
+
+
+
+
+
+
+
+
+
+
                         MainManagerGUI mainManagerGUI=new MainManagerGUI();
-                        //mainManagerGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
 
