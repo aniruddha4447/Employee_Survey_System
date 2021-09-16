@@ -135,13 +135,13 @@ public void initComponents(){
                     if(role_name.equalsIgnoreCase("admin"))
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
-                        mainAdminGUI.setVisible(true);
+                        //mainAdminGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
                     else if(role_name.equalsIgnoreCase("developer"))
                     {
                         MainUserGUI mainUserGUI=new MainUserGUI();
-                        mainUserGUI.setVisible(true);
+                        //mainUserGUI.setVisible(true);
                         loginFrame.setVisible(false);
                         
                     }
