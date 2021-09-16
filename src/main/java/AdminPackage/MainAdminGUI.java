@@ -3,7 +3,7 @@
  */
 package AdminPackage;
 
-import CreateSurvey.MainClass;
+import AdminPackage.pendingTask.AdminPendingTask;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class MainAdminGUI extends JFrame {
     JFrame frame;
-    JPanel buttonPanel, topPanel, mainPanel, editPanel, createPanel;
+    JPanel buttonPanel, topPanel, mainPanel, editPanel, createPanel, pendingPanel;
     JButton Create, Editprofile,Createsurvey,Pendingtask;
     JLabel title;
 
@@ -48,11 +48,12 @@ public class MainAdminGUI extends JFrame {
         mainPanel = new JPanel();
         editPanel = new JPanel();
         createPanel = new JPanel();
+        pendingPanel=new JPanel();
         JScrollBar scroll = new JScrollBar(JScrollBar.HORIZONTAL);
         Create = new JButton("Create User");
         Editprofile = new JButton("Edit Profile");
         Createsurvey = new JButton("Create Survey");
-        Pendingtask = new JButton("Pending Task");
+        Pendingtask=new JButton("Pending Task");
 
 
         // Panels Code
@@ -67,7 +68,13 @@ public class MainAdminGUI extends JFrame {
         mainPanel.setBounds(251, 120, 1451, 629);
         mainPanel.setBackground(Color.WHITE);
 
+        //pending panel
+        /*
+        pendingPanel.setBounds(251, 120, 1451, 629);
+        mainPanel.setBackground(Color.LIGHT_GRAY);
+        */
         // Buttons Code
+
         Create.setBounds(30, 150, 180, 40);
         Create.setBackground(Color.lightGray);
         Editprofile.setBounds(30, 230, 180, 40);
@@ -75,7 +82,8 @@ public class MainAdminGUI extends JFrame {
         Createsurvey.setBounds(30, 310, 180, 40);
         Createsurvey.setBackground(Color.lightGray);
         Pendingtask.setBounds(30, 390, 180, 40);
-        Pendingtask.setBackground(Color.lightGray);
+       Pendingtask.setBackground(Color.lightGray);
+
 
 
         //Label Code
@@ -90,6 +98,8 @@ public class MainAdminGUI extends JFrame {
         buttonPanel.add(Createsurvey);
         buttonPanel.add(Pendingtask);
         topPanel.add(title);
+        frame.add(pendingPanel);
+        //pendingPanel.setVisible(false);
         frame.add(mainPanel);
         frame.add(editPanel);
         frame.add(createPanel);
@@ -111,7 +121,8 @@ public class MainAdminGUI extends JFrame {
                 }
             }
         });
-        Editprofile.addActionListener(new ActionListener() {
+        Editprofile
+                .addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
                 try {
@@ -124,11 +135,13 @@ public class MainAdminGUI extends JFrame {
             }
         });
 
-        Createsurvey.addActionListener(new ActionListener() {
+        Pendingtask.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-
                 try {
-                    survey();
+                    AdminPendingTask adminPendingTask=new AdminPendingTask();
+
+
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 } catch (ClassNotFoundException ex) {
@@ -136,8 +149,8 @@ public class MainAdminGUI extends JFrame {
                 }
             }
         });
-
     }
+
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         MainAdminGUI gui = new MainAdminGUI();
         gui.PanelExample();
@@ -154,11 +167,6 @@ public class MainAdminGUI extends JFrame {
     public void Editu() throws SQLException, ClassNotFoundException {
           Editprofile ep=new Editprofile();
           // ep.connection();
-    }
-
-    public void survey() throws SQLException, ClassNotFoundException {
-         MainClass s = new MainClass();
-        // ep.connection();
     }
 
 
