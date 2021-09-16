@@ -1,0 +1,354 @@
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ /dev/null	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ /dev/null	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/java/LoginPage/LoginPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package LoginPage;\r\n\r\nimport AdminPackage.MainAdminGUI;\r\nimport ManagerPackage.MainManagerGUI;\r\nimport UserPackage.MainUserGUI;\r\nimport com.buttons.AllButtonsLoginPage;\r\nimport com.framesAndPanels.AllFrameLoginPage;\r\nimport com.framesAndPanels.AllFramesAndPanels;\r\nimport com.labels.AllLabelsLoginPage;\r\nimport com.textFields.AllTextFieldsLoginPage;\r\nimport com.util.InitiateComponents;\r\nimport com.util.UtilityFunctions;\r\n\r\nimport javax.swing.*;\r\nimport java.sql.*;\r\n\r\nimport static com.util.UtilityFunctions.encryptDecrypt;\r\n\r\npublic class LoginPage implements InitiateComponents\r\n{\r\n\r\nprivate JFrame loginFrame;\r\nprivate JPanel loginPagePanel;\r\nprivate JLabel userNameLabel,passwordLabel;\r\nprivate JTextField userNameField;\r\nprivate JPasswordField passwordField;\r\nprivate JButton loginButton,resetButton,exitButton;\r\nprivate PreparedStatement preparedStatement;\r\nprivate ResultSet roleNameFetching;\r\npublic JFrame queFrame;\r\npublic JFrame frame;\r\nprotected String LoginUsername;\r\nprotected String LoginPassword;\r\n\r\n\r\nLoginPage() {\r\n    initComponents();\r\n}\r\n\r\n@Override\r\npublic void initComponents(){\r\n\r\n    AllButtonsLoginPage buttonsCallingObj = new AllButtonsLoginPage();\r\n    AllLabelsLoginPage labelsCallingObj=new AllLabelsLoginPage();\r\n    AllTextFieldsLoginPage textFieldsCallingObj = new AllTextFieldsLoginPage();\r\n    AllFramesAndPanels userFramesAndPanelsObj =new AllFramesAndPanels();\r\n\r\n    loginFrame=new AllFrameLoginPage().putLoginPageFrame();\r\n    queFrame=userFramesAndPanelsObj.putFrame();\r\n\r\n    // Calling created label methods from AllLabelsLoginPage.java\r\n\r\n    userNameLabel=labelsCallingObj.putUsernameLabel();\r\n    loginFrame.add(userNameLabel);\r\n\r\n    passwordLabel=labelsCallingObj.putPasswordLabel();\r\n    loginFrame.add(passwordLabel);\r\n\r\n    //Calling created TextFields methods from AllTextFieldsLoginPage.java\r\n\r\n    userNameField=textFieldsCallingObj.putUsernameTextField();\r\n    loginFrame.add(userNameField);\r\n\r\n    passwordField=textFieldsCallingObj.putPasswordField();\r\n    loginFrame.add(passwordField);\r\n\r\n    // Calling all created button methods from AllButtonsLoginPage.java\r\n\r\n    loginButton= buttonsCallingObj.putLoginButton();\r\n    loginFrame.add(loginButton);\r\n    loginButton.addActionListener(e -> {\r\n\r\n        //calling login button actionListener method\r\n        loginButtonActionListener();\r\n    });\r\n\r\n\r\n    resetButton= buttonsCallingObj.putResetButton();\r\n    loginFrame.add(resetButton);\r\n    resetButton.addActionListener(e -> {\r\n\r\n        //calling reset button actionListener method\r\n        resetButtonActionListener();\r\n    });\r\n\r\n\r\n    exitButton= buttonsCallingObj.putExitButton();\r\n    loginFrame.add(exitButton);\r\n\r\n    exitButton.addActionListener(e -> {\r\n        //calling exit button actionListener method\r\n        exitButtonActionListener();\r\n\r\n    });\r\n\r\n\r\n}\r\n\r\n    private void exitButtonActionListener()\r\n    {\r\n        int a=JOptionPane.showConfirmDialog(loginPagePanel,\"Are you sure ?\",\"Warning\",JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE);\r\n        if(a==JOptionPane.YES_OPTION)\r\n        {\r\n            System.exit(0);\r\n        }\r\n    }\r\n\r\n    private void resetButtonActionListener()\r\n    {\r\n        userNameField.setText(\"\");\r\n        passwordField.setText(\"\");\r\n    }\r\n\r\n    private void loginButtonActionListener()\r\n    {\r\n        try{\r\n            Connection connection= UtilityFunctions.createConnection();\r\n\r\n            String username = userNameField.getText();\r\n            LoginUsername=username;\r\n\r\n            String password= UtilityFunctions.encryptDecrypt( new String(passwordField.getPassword()));\r\n            LoginPassword=password;\r\n\r\n            preparedStatement = connection.prepareStatement(\"select role_name from users where user_name= ? and password= ?\");\r\n            preparedStatement.setString(1,username);\r\n            preparedStatement.setString(2,password);\r\n\r\n            //ResultSet idFetching ;\r\n            roleNameFetching = preparedStatement.executeQuery();\r\n\r\n            if(roleNameFetching.next())\r\n            {\r\n                    String role_name= roleNameFetching.getString(1);\r\n                    System.out.println(role_name);\r\n                    if(role_name.equalsIgnoreCase(\"admin\"))\r\n                    {\r\n                        MainAdminGUI mainAdminGUI=new MainAdminGUI();\r\n                        mainAdminGUI.setVisible(true);\r\n                        loginFrame.setVisible(false);\r\n                    }\r\n                    else if(role_name.equalsIgnoreCase(\"developer\"))\r\n                    {\r\n                        MainUserGUI mainUserGUI=new MainUserGUI();\r\n                        mainUserGUI.setVisible(true);\r\n                        loginFrame.setVisible(false);\r\n                        \r\n                    }\r\n                    else if(role_name.equalsIgnoreCase(\"manager\"))\r\n                    {\r\n                        MainManagerGUI mainManagerGUI=new MainManagerGUI();\r\n                        //mainManagerGUI.setVisible(true);\r\n                        loginFrame.setVisible(false);\r\n                    }\r\n\r\n            }\r\n            else\r\n            {\r\n                JOptionPane.showMessageDialog(loginPagePanel,\"Enter Valid username and password\",\"ERROR\",JOptionPane.ERROR_MESSAGE);\r\n\r\n            }\r\n        }\r\n        catch (SQLException | ClassNotFoundException exception)\r\n        {\r\n            exception.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\npublic static void main(String[] arg) throws SQLException, ClassNotFoundException {\r\n    new LoginPage();\r\n}\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/LoginPage/LoginPage.java b/src/main/java/LoginPage/LoginPage.java
+--- a/src/main/java/LoginPage/LoginPage.java	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ b/src/main/java/LoginPage/LoginPage.java	(date 1631788676856)
+@@ -122,7 +122,7 @@
+             String password= UtilityFunctions.encryptDecrypt( new String(passwordField.getPassword()));
+             LoginPassword=password;
+ 
+-            preparedStatement = connection.prepareStatement("select role_name from users where user_name= ? and password= ?");
++            preparedStatement = connection.prepareStatement("select role from users where username= ? and password= ?");
+             preparedStatement.setString(1,username);
+             preparedStatement.setString(2,password);
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n<<<<<<< HEAD\r\n    <list default=\"true\" id=\"95f351d7-be0b-44a7-837b-a23cf56bb4da\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/LoginPage/MainManagerGUI.java\" beforeDir=\"false\" />\r\n=======\r\n    <list default=\"true\" id=\"95f351d7-be0b-44a7-837b-a23cf56bb4da\" name=\"Changes\" comment=\"Login Changes\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java\" afterDir=\"false\" />\r\n>>>>>>> AdminPendingTask\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xw7cfejuG4My0SBmKvbRb8vRKA\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"D:/IntelliJ/DummyCodes\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.LoginPage\">\r\n    <configuration name=\"AdminPendingTask\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdminPackage.pendingTask.AdminPendingTask\" />\r\n      <module name=\"Employee_Survey_System\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"AdminPackage.pendingTask.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Createuser\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdminPackage.Createuser\" />\r\n      <module name=\"Employee_Survey_System\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"AdminPackage.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Editprofile\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdminPackage.Editprofile\" />\r\n      <module name=\"Employee_Survey_System\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"AdminPackage.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LoginPage\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"LoginPage.LoginPage\" />\r\n      <module name=\"Employee_Survey_System\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"LoginPage.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainAdminGUI\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdminPackage.MainAdminGUI\" />\r\n      <module name=\"Employee_Survey_System\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"AdminPackage.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainPanelGUI\" type=\"MavenRunConfiguration\" factoryName=\"Maven\">\r\n      <MavenSettings>\r\n        <option name=\"myGeneralSettings\" />\r\n        <option name=\"myRunnerSettings\" />\r\n        <option name=\"myRunnerParameters\">\r\n          <MavenRunnerParameters>\r\n            <option name=\"profiles\">\r\n              <set />\r\n            </option>\r\n            <option name=\"goals\">\r\n              <list />\r\n            </option>\r\n            <option name=\"pomFileName\" />\r\n            <option name=\"profilesMap\">\r\n              <map />\r\n            </option>\r\n            <option name=\"resolveToWorkspace\" value=\"false\" />\r\n            <option name=\"workingDirPath\" value=\"$PROJECT_DIR$\" />\r\n          </MavenRunnerParameters>\r\n        </option>\r\n      </MavenSettings>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Createuser\" />\r\n      <item itemvalue=\"Application.Editprofile\" />\r\n      <item itemvalue=\"Application.LoginPage\" />\r\n      <item itemvalue=\"Application.MainAdminGUI\" />\r\n      <item itemvalue=\"Application.AdminPendingTask\" />\r\n      <item itemvalue=\"Maven.MainPanelGUI\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.LoginPage\" />\r\n        <item itemvalue=\"Application.AdminPendingTask\" />\r\n        <item itemvalue=\"Application.MainAdminGUI\" />\r\n        <item itemvalue=\"Application.Createuser\" />\r\n        <item itemvalue=\"Application.Editprofile\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"95f351d7-be0b-44a7-837b-a23cf56bb4da\" name=\"Changes\" comment=\"\" />\r\n      <created>1631254378395</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1631254378395</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Admin GUI login merged\">\r\n      <created>1631608087074</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631608087074</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Admin GUI login merged\">\r\n      <created>1631624386940</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631624386940</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Admin GUI login merged\">\r\n      <created>1631624535747</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631624535747</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Admin GUI login merged\">\r\n      <created>1631624650554</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631624650554</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Login Changes\">\r\n      <created>1631629170972</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631629170972</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Login Changes\">\r\n      <created>1631629267452</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631629267452</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Admin GUI login merged\" />\r\n    <MESSAGE value=\"Login Changes\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Login Changes\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ b/.idea/workspace.xml	(date 1631788685611)
+@@ -4,16 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-<<<<<<< HEAD
+-    <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="">
++    <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Admin GUI login merged">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/MainManagerGUI.java" beforeDir="false" />
+-=======
+-    <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Login Changes">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java" afterDir="false" />
+->>>>>>> AdminPendingTask
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -30,7 +23,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="master" />
++        <entry key="$PROJECT_DIR$" value="LoginPage" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -44,22 +37,9 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="last_opened_file_path" value="D:/IntelliJ/DummyCodes" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="RunManager" selected="Application.LoginPage">
+-    <configuration name="AdminPendingTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="AdminPackage.pendingTask.AdminPendingTask" />
+-      <module name="Employee_Survey_System" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="AdminPackage.pendingTask.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="RunManager" selected="Application.MainUserGUI">
+     <configuration name="Createuser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="AdminPackage.Createuser" />
+       <module name="Employee_Survey_System" />
+@@ -112,6 +92,19 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="MainUserGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="UserPackage.MainUserGUI" />
++      <module name="Employee_Survey_System" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="UserPackage.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="MainPanelGUI" type="MavenRunConfiguration" factoryName="Maven">
+       <MavenSettings>
+         <option name="myGeneralSettings" />
+@@ -140,16 +133,16 @@
+       <item itemvalue="Application.Editprofile" />
+       <item itemvalue="Application.LoginPage" />
+       <item itemvalue="Application.MainAdminGUI" />
+-      <item itemvalue="Application.AdminPendingTask" />
+       <item itemvalue="Maven.MainPanelGUI" />
++      <item itemvalue="Application.MainUserGUI" />
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.LoginPage" />
+-        <item itemvalue="Application.AdminPendingTask" />
++        <item itemvalue="Application.MainUserGUI" />
+         <item itemvalue="Application.MainAdminGUI" />
+-        <item itemvalue="Application.Createuser" />
++        <item itemvalue="Application.LoginPage" />
+         <item itemvalue="Application.Editprofile" />
++        <item itemvalue="Application.Createuser" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -190,21 +183,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1631624650554</updated>
+     </task>
+-    <task id="LOCAL-00005" summary="Login Changes">
+-      <created>1631629170972</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1631629170972</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Login Changes">
+-      <created>1631629267452</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1631629267452</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -221,7 +200,6 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Admin GUI login merged" />
+-    <MESSAGE value="Login Changes" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Login Changes" />
++    <option name="LAST_COMMIT_MESSAGE" value="Admin GUI login merged" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ b/.idea/misc.xml	(date 1631788679757)
+@@ -8,7 +8,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/util/UtilityFunctions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.util;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\n\r\npublic class UtilityFunctions {\r\n    static public String encryptDecrypt(String inputString)\r\n    {\r\n        //key to encrypt and decrypt\r\n        char xorKey = 'P';\r\n\r\n        String outputString = \"\";\r\n        int len = inputString.length();\r\n\r\n        // perform XOR operation of key\r\n        for (int i = 0; i < len; i++)\r\n        {\r\n            outputString = outputString + (char) (inputString.charAt(i) ^ xorKey);\r\n        }\r\n\r\n        System.out.println(outputString);\r\n        return outputString;\r\n    }\r\n\r\n    static public Connection createConnection() throws ClassNotFoundException, SQLException {\r\n        Class.forName(\"com.mysql.cj.jdbc.Driver\");\r\n        Connection conn = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/survey_system\", \"Aress\", \"Aress@aress123\");\r\n        return conn;\r\n    }\r\n\r\n    ///// Connection conn=createConnection();\r\n    \r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/util/UtilityFunctions.java b/src/main/java/com/util/UtilityFunctions.java
+--- a/src/main/java/com/util/UtilityFunctions.java	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ b/src/main/java/com/util/UtilityFunctions.java	(date 1631788676862)
+@@ -25,7 +25,7 @@
+ 
+     static public Connection createConnection() throws ClassNotFoundException, SQLException {
+         Class.forName("com.mysql.cj.jdbc.Driver");
+-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_system", "Aress", "Aress@aress123");
++        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey database", "Aress", "Aress@aress123");
+         return conn;
+     }
+ 
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"ywz\" />\r\n        <module name=\"Employee_Survey_System\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 2dd36021b7e0c2b9007aeeae72d7008476e199fd)
++++ b/.idea/compiler.xml	(date 1631788679762)
+@@ -7,7 +7,6 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+         <module name="ywz" />
+-        <module name="Employee_Survey_System" />
+       </profile>
+     </annotationProcessing>
+   </component>
