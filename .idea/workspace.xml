@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginPage/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LoginPage/MainManagerGUI.java" beforeDir="false" />
-=======
+    </list>
     <list default="true" id="95f351d7-be0b-44a7-837b-a23cf56bb4da" name="Changes" comment="Login Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AdminPackage/MainAdminGUI.java" afterDir="false" />
->>>>>>> AdminPendingTask
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="D:/IntelliJ/DummyCodes" />
   </component>
-  <component name="RunManager" selected="Application.LoginPage">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="AdminPendingTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdminPackage.pendingTask.AdminPendingTask" />
       <module name="Employee_Survey_System" />
@@ -62,19 +60,6 @@
     </configuration>
     <configuration name="Createuser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdminPackage.Createuser" />
-      <module name="Employee_Survey_System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="AdminPackage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Editprofile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AdminPackage.Editprofile" />
       <module name="Employee_Survey_System" />
       <extension name="coverage">
         <pattern>
@@ -112,6 +97,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CreateSurvey.MainClass" />
+      <module name="Employee_Survey_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CreateSurvey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainPanelGUI" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -137,19 +135,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Createuser" />
-      <item itemvalue="Application.Editprofile" />
       <item itemvalue="Application.LoginPage" />
       <item itemvalue="Application.MainAdminGUI" />
       <item itemvalue="Application.AdminPendingTask" />
       <item itemvalue="Maven.MainPanelGUI" />
+      <item itemvalue="Application.MainClass" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.LoginPage" />
         <item itemvalue="Application.AdminPendingTask" />
         <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.Createuser" />
-        <item itemvalue="Application.Editprofile" />
       </list>
     </recent_temporary>
   </component>

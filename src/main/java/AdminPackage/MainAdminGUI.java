@@ -5,6 +5,8 @@ package AdminPackage;
 
 import AdminPackage.pendingTask.AdminPendingTask;
 
+import CreateSurvey.MainClass;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -53,7 +55,7 @@ public class MainAdminGUI extends JFrame {
         Create = new JButton("Create User");
         Editprofile = new JButton("Edit Profile");
         Createsurvey = new JButton("Create Survey");
-        Pendingtask=new JButton("Pending Task");
+        Pendingtask = new JButton("Pending Task");
 
 
         // Panels Code
@@ -82,8 +84,7 @@ public class MainAdminGUI extends JFrame {
         Createsurvey.setBounds(30, 310, 180, 40);
         Createsurvey.setBackground(Color.lightGray);
         Pendingtask.setBounds(30, 390, 180, 40);
-       Pendingtask.setBackground(Color.lightGray);
-
+        Pendingtask.setBackground(Color.lightGray);
 
 
         //Label Code
@@ -149,8 +150,21 @@ public class MainAdminGUI extends JFrame {
                 }
             }
         });
-    }
 
+        Createsurvey.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    survey();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+    }
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         MainAdminGUI gui = new MainAdminGUI();
         gui.PanelExample();
@@ -167,6 +181,11 @@ public class MainAdminGUI extends JFrame {
     public void Editu() throws SQLException, ClassNotFoundException {
           Editprofile ep=new Editprofile();
           // ep.connection();
+    }
+
+    public void survey() throws SQLException, ClassNotFoundException {
+         MainClass s = new MainClass();
+        // ep.connection();
     }
 
 
