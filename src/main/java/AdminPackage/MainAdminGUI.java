@@ -6,11 +6,13 @@ package AdminPackage;
 import AdminPackage.pendingTask.AdminPendingTask;
 
 import CreateSurvey.MainClass;
+
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.swing.JRViewer;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -60,7 +62,9 @@ public class MainAdminGUI extends JFrame {
         Editprofile = new JButton("Edit Profile");
         Createsurvey = new JButton("Create Survey");
         Pendingtask = new JButton("Pending Task");
+
         Report1 = new JButton("View Report");
+
 
 
 
@@ -85,6 +89,8 @@ public class MainAdminGUI extends JFrame {
         Createsurvey.setBackground(Color.lightGray);
         Pendingtask.setBounds(30, 390, 180, 40);
         Pendingtask.setBackground(Color.lightGray);
+        Report1.setBounds(30, 460, 180, 40);
+        Report1.setBackground(Color.lightGray);
 
 
         //Label Code
@@ -98,6 +104,7 @@ public class MainAdminGUI extends JFrame {
         buttonPanel.add(Editprofile);
         buttonPanel.add(Createsurvey);
         buttonPanel.add(Pendingtask);
+        buttonPanel.add(Report1);
         topPanel.add(title);
         frame.add(pendingPanel);
         //pendingPanel.setVisible(false);
@@ -106,6 +113,7 @@ public class MainAdminGUI extends JFrame {
         frame.add(createPanel);
         frame.add(topPanel);
         frame.add(buttonPanel);
+        frame.add(reportPanel);
         frame.add(scroll);
         frame.setSize(400, 400);
         frame.pack();
@@ -154,20 +162,25 @@ public class MainAdminGUI extends JFrame {
         Createsurvey.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                try {
-                    survey();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                } catch (ClassNotFoundException ex) {
-                    ex.printStackTrace();
-                }
+
             }
         });
+
         Report1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //repor();
+                Report();
             }
         });
+
+
+
+        Createsurvey.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
+
 
     }
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -187,13 +200,13 @@ public class MainAdminGUI extends JFrame {
 
     }
 
-    public void survey() throws SQLException, ClassNotFoundException {
+   /* public void survey() throws SQLException, ClassNotFoundException {
         MainClass s = new MainClass();
 
-    }
+    }*/
 
     public void Report()    {
-        reportPanel.setBounds(251, 120, 1451, 629);
+        reportPanel.setBounds(251, 120, 1350, 800);
         reportPanel.setBackground(Color.WHITE);
         reportPanel.setLayout(null);
 
@@ -242,6 +255,11 @@ public class MainAdminGUI extends JFrame {
 
         }
 
+    }
+
+    public void survey() throws SQLException, ClassNotFoundException {
+         MainClass s = new MainClass();
+        // ep.connection();
     }
 
 
