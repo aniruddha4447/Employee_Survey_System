@@ -39,13 +39,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="D:/IntelliJ/DummyCodes" />
   </component>
-  <component name="RunManager" selected="Application.AdminPendingTask">
+  <component name="RunManager" selected="Application.LoginPage">
     <configuration name="AdminPendingTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="JAVA_HOME" value="C:\Program Files\Java\jdk1.8.0_301\bin" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="AdminPackage.pendingTask.AdminPendingTask" />
-      <module name="ywz" />
+      <module name="Employee_Survey_System" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="AdminPackage.pendingTask.*" />
@@ -144,9 +141,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AdminPendingTask" />
         <item itemvalue="Application.LoginPage" />
         <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.AdminPendingTask" />
         <item itemvalue="Application.MainAdminGUI" />
         <item itemvalue="Application.Createuser" />
       </list>
