@@ -10,5 +10,8 @@
         <module name="Employee_Survey_System" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ywz" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

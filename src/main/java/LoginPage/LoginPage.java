@@ -122,7 +122,7 @@ public void initComponents(){
             String password= UtilityFunctions.encryptDecrypt( new String(passwordField.getPassword()));
             LoginPassword=password;
 
-            preparedStatement = connection.prepareStatement("select role_name from users where user_name= ? and password= ?");
+            preparedStatement = connection.prepareStatement("select role from users where username= ? and password= ?");
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
 
@@ -136,13 +136,13 @@ public void initComponents(){
                     if(role_name.equalsIgnoreCase("admin"))
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
-                        mainAdminGUI.setVisible(true);
+                        //mainAdminGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
                     else if(role_name.equalsIgnoreCase("developer"))
                     {
                         MainUserGUI mainUserGUI=new MainUserGUI();
-                        mainUserGUI.setVisible(true);
+                        //mainUserGUI.setVisible(true);
                         loginFrame.setVisible(false);
                         
                     }

@@ -31,6 +31,7 @@ public class AdminPendingTask implements InitiateComponents
         pendingTaskMainPanel.setBackground(Color.LIGHT_GRAY);
         adminpendingtaskFrame.add(pendingTaskMainPanel);
         upperPanel= new JPanel();
+        upperPanel.setLayout(null);
         upperPanel.setBounds(0,0,1450,100);
 
         pendingTaskMainPanel.add(upperPanel);
