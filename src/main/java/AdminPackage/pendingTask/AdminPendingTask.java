@@ -54,22 +54,19 @@ public class AdminPendingTask implements InitiateComponents
         upperPanel.add(findFilterButton);
 
         DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("Id");
+        model.addColumn("Developer-id");
         model.addColumn("Name");
-        model.addColumn("Job-Title");
-        model.addColumn("Survey Name");
-        model.addColumn("Survey publish date");
-        model.addColumn("Survey close date");
-
+        model.addColumn("Email");
+        model.addColumn("phone Number");
 
         Connection conn= UtilityFunctions.createConnection();
 
         ResultSet allUsersDataFetching;
-        PreparedStatement pstm = conn.prepareStatement("select users.user_id,users.user_name,users.role_name, survey.survey_name,survey.publish_date,survey.close_date from users,survey where status='pending'");
+        PreparedStatement pstm = conn.prepareStatement("select users.user_id, users.username,users.email,users.phno from users left join survey_responses on users.user_id=survey_responses.emp_id where survey_responses.emp_id is null and users.role='developer'");
         allUsersDataFetching = pstm.executeQuery();
         while(allUsersDataFetching.next())
         {
-            model.addRow(new Object[]{allUsersDataFetching.getInt(1), allUsersDataFetching.getString(2), allUsersDataFetching.getString(3), allUsersDataFetching.getString(4), allUsersDataFetching.getString(5), allUsersDataFetching.getString(6)});
+            model.addRow(new Object[]{allUsersDataFetching.getInt(1), allUsersDataFetching.getString(2), allUsersDataFetching.getString(3), allUsersDataFetching.getLong(4)});
         }
         table = new JTable(model);
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
