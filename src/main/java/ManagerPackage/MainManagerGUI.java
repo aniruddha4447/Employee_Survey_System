@@ -93,7 +93,7 @@ public class MainManagerGUI extends JFrame
         {
             public void actionPerformed(ActionEvent e)
             {
-                Report();
+              //  Report();
             }
         });
         Edit_Profile.addActionListener(new ActionListener()
@@ -251,57 +251,10 @@ public class MainManagerGUI extends JFrame
         });
     }
 
-    public void Report()    {
-        reportPanel.setBounds(251, 120, 1451, 629);
-        reportPanel.setBackground(Color.WHITE);
-        reportPanel.setLayout(null);
-
-        JLabel EditTitle = new JLabel("Report");
-        EditTitle.setBounds(500, 10, 100, 20);
-        EditTitle.setVerticalAlignment(SwingConstants.TOP);
-        reportPanel.add(EditTitle);
-
-        try {
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
-            //reportPanel.setSize(1350,800);
-            reportPanel.setBounds(251, 120, 1000, 800);
-
-            HashMap para=new HashMap();
-            reportPanel.removeAll();
-            reportPanel.repaint();;
-            reportPanel.revalidate();
-
-            FileInputStream in=new FileInputStream(new File("C:\\Users\\user\\eclipse-workspace\\hello\\ManagerReport.jrxml"));
-            JasperDesign jd= JRXmlLoader.load(in);
-
-            String sql;
-            sql = " select survey_responses.emp_id,survey_responses.manager_id,users.username,questions.question,categories.category_name,survey_responses.rating,survey_responses.comment from survey_responses,users,categories,questions where users.user_id=survey_responses.manager_id and categories.category_id=survey_responses.cat_id and questions.question_id=survey_responses.question_id and users.username='harshad'";
-            JRDesignQuery newQuery=new JRDesignQuery();
-            newQuery.setText(sql);
-            jd.setQuery(newQuery);
-
-            JasperReport jr= JasperCompileManager.compileReport(jd);
-            JasperPrint j= JasperFillManager.fillReport(jr, para, connection);
 
 
-            JRViewer v = new JRViewer(j);
-            reportPanel.setLayout(new BorderLayout());
-            reportPanel.add(v);
-
-            //JasperViewer.viewReport(j, false);
-            FileOutputStream os=new FileOutputStream(new File("D:\\reports\\Manager report.pdf"));
-            JasperExportManager.exportReportToPdfStream(j, os);
 
 
-        } catch (Exception ae) {
-
-            ae.printStackTrace();
-
-        }
-
-    }
 
 
     public void encryptdecryptpwd(String str) {

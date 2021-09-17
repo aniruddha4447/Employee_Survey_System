@@ -42,17 +42,12 @@ public class Createuser extends JFrame implements ActionListener {
     private String NUll;
 
 
-  /*  public Connection connection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/survey_portfolio", "Aress", "Aress@aress123");
-        System.out.println("Connected to Database");
-        return conn;
-    }*/
+
 
     public Createuser() {
         f = new JFrame("Create New User");
         panel = new JPanel();
-        panel.setBounds(40, 40, 800, 800);
+        panel.setBounds(40, 40, 600, 600);
         panel.setBackground(Color.lightGray);
         panel.setLayout(null);
 
@@ -78,43 +73,29 @@ public class Createuser extends JFrame implements ActionListener {
         Phno = new JTextField();
         Phno.setBounds(300, 150, 200, 30);
 
-        gender = new JLabel("Gender:");
-        gender.setBounds(80, 190, 200, 30);
-
-        male = new JRadioButton("Male");
-        male.setBounds(300, 190, 80, 20);
-        male.setBackground(Color.lightGray);
-        female = new JRadioButton("Female");
-        female.setBounds(400, 190, 80, 20);
-        female.setBackground(Color.lightGray);
-
-        AddressLabel = new JLabel("Address:");
-        AddressLabel.setBounds(80, 230, 200, 30);
-        Add = new JTextArea();
-        Add.setBounds(300, 230, 200, 50);
 
         EmailLabel = new JLabel("Email:");
-        EmailLabel.setBounds(80, 300, 200, 30);
+        EmailLabel.setBounds(80, 190, 200, 30);
         Email = new JTextField();
-        Email.setBounds(300, 300, 200, 30);
+        Email.setBounds(300, 190, 200, 30);
 
         Password = new JLabel("Password:");
-        Password.setBounds(80, 340, 200, 30);
+        Password.setBounds(80, 230, 200, 30);
         p1 = new JPasswordField();
-        p1.setBounds(300, 340, 200, 30);
+        p1.setBounds(300, 230, 200, 30);
 
         Confirmpass = new JLabel("Confirm Password:");
-        Confirmpass.setBounds(80, 390, 200, 30);
+        Confirmpass.setBounds(80, 300, 200, 30);
         p2 = new JPasswordField();
-        p2.setBounds(300, 390, 200, 30);
+        p2.setBounds(300, 300, 200, 30);
 
 
         sub = new JButton("Submit");
-        sub.setBounds(100, 600, 100, 30);
+        sub.setBounds(100, 450, 100, 30);
         reset = new JButton("Reset");
-        reset.setBounds(250, 600, 100, 30);
-        cancel = new JButton("Cancel");
-        cancel.setBounds(400, 600, 100, 30);
+        reset.setBounds(250, 450, 100, 30);
+        // cancel = new JButton("Cancel");
+        // cancel.setBounds(400, 600, 100, 30);
 
         panel.add(title);
         panel.add(NameLabel);
@@ -123,11 +104,7 @@ public class Createuser extends JFrame implements ActionListener {
         panel.add(Rolecb);
         panel.add(PhnoLabel);
         panel.add(Phno);
-        panel.add(gender);
-        panel.add(male);
-        panel.add(female);
-        panel.add(AddressLabel);
-        panel.add(Add);
+
         panel.add(EmailLabel);
         panel.add(Email);
         panel.add(Password);
@@ -138,16 +115,12 @@ public class Createuser extends JFrame implements ActionListener {
         sub.addActionListener(this);
         panel.add(reset);
         reset.addActionListener(this);
-        //panel.add(delete);
-      //  delete.addActionListener(this);
-        panel.add(cancel);
-        cancel.addActionListener(this);
 
         f.add(panel);
-        f.setSize(900, 900);
+        f.setSize(700, 700);
         f.setLayout(null);
         f.setVisible(true);
-     //   f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //   f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 
@@ -155,25 +128,24 @@ public class Createuser extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == sub) {
 
-               insert();
+            insert();
 
 
         } else if (event.getSource() == reset) {
             Rolecb.setSelectedIndex(0);
-            male.setSelected(false);
-            female.setSelected(false);
+
             Email.setText("");
             Namet.setText("");
-            Add.setText("");
+
             Phno.setText("");
             p1.setText("");
             p2.setText("");
-        }else if (event.getSource() == cancel) {
-            cancelmethod();
+        }
 
-        } else {
+        else {
+
             JOptionPane.showMessageDialog(f, "Please enter the correct details",
-                    "Swing Tester", JOptionPane.ERROR_MESSAGE);
+                    "Check Details", JOptionPane.ERROR_MESSAGE);
         }
 
 
@@ -198,35 +170,24 @@ public class Createuser extends JFrame implements ActionListener {
 
 
                         try {
-                               if(Rolval.equals("Manager"))
-                               {
-                                  userstatus="null";
-                               }
-                               else if(Rolval.equals("Admin"))
-                               {
-                                    userstatus="null";
-                               }
-                               else
-                               {
-                                   userstatus="Pending";
-                               }
+
 
                             Connection connection= UtilityFunctions.createConnection();
-                               outputString=UtilityFunctions.encryptDecrypt(pwd);
+                            outputString=UtilityFunctions.encryptDecrypt(pwd);
 
-                            String query = "insert into users (user_name,user_email,password,phone_no,role_name,gender,address,status)  values('" + Username + "','" + email + "','" + outputString + "','" +
+                            String query = "insert into users (username,email,role,phno,password)  values('" + Username + "','" + email + "','" + Rolval + "','" +
 
-                                         Pno + "','" + Rolval + "','" + Gval + "','" + Addr + "','"+userstatus+"')";
+                                    Pno + "','" + outputString + "')";
 
-                                 p = connection.prepareStatement(query);
-                                 boolean x = false;
-                                 if (x == p.execute()) {
-                                     System.out.println("Record Successfully Inserted");
-                                     JOptionPane.showMessageDialog(f,
-                                             "New User Created Successfully");
-                                 } else {
-                                     System.out.println("Insert Failed");
-                                 }
+                            p = connection.prepareStatement(query);
+                            boolean x = false;
+                            if (x == p.execute()) {
+                                System.out.println("Record Successfully Inserted");
+                                JOptionPane.showMessageDialog(f,
+                                        "New User Created Successfully");
+                            } else {
+                                System.out.println("Insert Failed");
+                            }
 
 
 
@@ -234,13 +195,13 @@ public class Createuser extends JFrame implements ActionListener {
                             e.printStackTrace();
                         }
                     } else {
-                        JOptionPane.showMessageDialog(f, "Please Enter Correct Mobile no",
-                                "Check Password", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(f, "Please Enter Correct Mobile Number",
+                                "Check Mobile Number", JOptionPane.ERROR_MESSAGE);
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(f, "Please Enter Correct Email ID",
-                            "Check Password", JOptionPane.ERROR_MESSAGE);
+                            "Check Email ID", JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
@@ -260,31 +221,15 @@ public class Createuser extends JFrame implements ActionListener {
 
 
 
-    public void cancelmethod() {
-        int res = JOptionPane.showConfirmDialog(null,
-                "Do you want to Exit?", "Select an Option...", JOptionPane.YES_NO_OPTION);
-        if (res == JOptionPane.YES_OPTION) {
 
-            System.exit(0);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(f, "Please enter the correct details",
-                    "Swing Tester", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }
     public void getValuefromGui() {
 
         Username = Namet.getText();
         Pno = Phno.getText();
-        Addr = Add.getText();
+
         email = Email.getText();
 
-        if (male.isSelected())
-            Gval = "Male";
-        else if (female.isSelected())
-            Gval = "Female";
+
 
         Rolval = Rolecb.getSelectedItem().toString();
 
@@ -296,34 +241,11 @@ public class Createuser extends JFrame implements ActionListener {
     }
 
 
-    /*public void encryptpwd() {
-            // Define XOR key
-            // Any character value will work
 
-            char xorKey = 'P';
-
-            // Define String to store encrypted/decrypted String
-            outputString = "";
-            inputString = pwd;
-            // calculate length of input string
-            int len = inputString.length();
-
-            // perform XOR operation of key
-            // with every character in string
-            for (int i = 0; i < len; i++) {
-                outputString = outputString + Character.toString((char) (inputString.charAt(i) ^ xorKey));
-            }
-
-            System.out.println(outputString);
-
-
-        }*/
-
-
-        public static void main(String[] args) throws SQLException, ClassNotFoundException
-        {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException
+    {
         Createuser e=new Createuser();
-      // e.connection();
+
 
     }
 
