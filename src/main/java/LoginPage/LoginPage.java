@@ -12,9 +12,11 @@ import com.util.InitiateComponents;
 import com.util.UtilityFunctions;
 
 import javax.swing.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import static com.util.UtilityFunctions.encryptDecrypt;
 
 public class LoginPage implements InitiateComponents
 {
@@ -147,15 +149,6 @@ public void initComponents(){
                     else if(role_name.equalsIgnoreCase("manager"))
                     {
 
-
-
-
-
-
-
-
-
-
                         MainManagerGUI mainManagerGUI=new MainManagerGUI();
                         loginFrame.setVisible(false);
                     }
@@ -167,7 +160,7 @@ public void initComponents(){
 
             }
         }
-        catch (SQLException | ClassNotFoundException exception)
+        catch (ClassNotFoundException | SQLException exception)
         {
             exception.printStackTrace();
         }

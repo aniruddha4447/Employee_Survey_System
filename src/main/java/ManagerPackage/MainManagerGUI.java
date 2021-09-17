@@ -19,8 +19,6 @@ import java.io.FileOutputStream;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
 
 public class MainManagerGUI extends JFrame
 {
@@ -28,21 +26,18 @@ public class MainManagerGUI extends JFrame
     JPanel buttonPanel, topPanel, mainPanel, editPanel, reportPanel;
     JButton View_Report, Edit_Profile;
     JLabel title;
-    Statement s;
     JPasswordField tfPassword;
-    JPanel panel1;
     JLabel id,name,email,phone,password,address,gender,role_name;
     JTextArea tadd;
     JTextField tfId,tfName,tfEmail,tfPhone;
     JRadioButton male, female;
     JComboBox role_combo;
     JFrame f;
-    JPanel panel;
-    private JButton  deleteb,reset, update, cancel,showdetails;
+    private JButton reset, update;
     String Username, Addr, Pno, Rolval, Gval, pwd, Email, Cpwd,gender1,id1,id2;
     String outputString,inputString,em,nm,pass,phno,rnm,gen,addr,passw;
     PreparedStatement p;
-    Connection con;
+
 
     String reg = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     // boolean result = email.matches(reg);
@@ -105,25 +100,11 @@ public class MainManagerGUI extends JFrame
         {
             public void actionPerformed(ActionEvent e)
             {
-                //Edit();
                 editPanel.setVisible(true);
-                //Editprofile();
                 Edit();
             }
         });
     }
-   /* public void connection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_system", "Aress", "Aress@aress123");
-        System.out.println("Connected to Database");
-    }*/
-   /* public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        ManagerUi gui = new ManagerUi();
-        gui.PanelExample();
-        gui.connection();
-
-    }*/
-
     public void Edit()    {
         editPanel.setBounds(251, 120, 1451, 629);
         editPanel.setBackground(Color.lightGray);
@@ -146,14 +127,6 @@ public class MainManagerGUI extends JFrame
         tfId.setFont(new Font("Verdana", Font.PLAIN, 15));
         editPanel.add(tfId);
         String Id=tfId.getText();
-
-            /*JButton btn_search = new JButton("Search");
-            btn_search.setBounds(410, 150, 76, 30);
-            btn_search.setBackground(Color.yellow);
-            //btn_search.setMnemonic(KeyEvent.VK_S);
-            btn_search.setToolTipText("Search the Record");
-            btn_search.setMnemonic('s');
-            editPanel.add(btn_search);*/
 
         name = new JLabel("Name");
         name.setBounds(100, 200, 200, 30);
@@ -209,51 +182,39 @@ public class MainManagerGUI extends JFrame
         gender = new JLabel("Gender");
         gender.setBounds(100, 300, 200, 30);
         gender.setFont(new Font("Verdana", Font.PLAIN, 20));
-        editPanel.add(gender);
+        // editPanel.add(gender);
 
         male = new JRadioButton("Male");
         male.setFont(new Font("Verdana", Font.PLAIN, 20));
         male.setSelected(true);
         male.setBackground(Color.lightGray);
         male.setBounds(210, 300, 100, 30);
-        editPanel.add(male);
+        //editPanel.add(male);
 
         female = new JRadioButton("Female");
         female.setFont(new Font("Verdana", Font.PLAIN, 20));
         female.setSelected(false);
         female.setBackground(Color.lightGray);
         female.setBounds(310, 300, 100, 30);
-        editPanel.add(female);
-
-        ButtonGroup genderGroup = new ButtonGroup();
-        genderGroup.add(male);
-        genderGroup.add(female);
+        // editPanel.add(female);
 
         address = new JLabel("Address");
         address.setBounds(550, 300, 200, 30);
         address.setFont(new Font("Verdana", Font.PLAIN, 20));
-        editPanel.add(address);
+        //  editPanel.add(address);
 
         tadd = new JTextArea();
         tadd.setFont(new Font("Verdana", Font.PLAIN, 15));
         tadd.setBounds(660, 300, 200, 30);
         tadd.setLineWrap(true);
-        editPanel.add(tadd);
+        //editPanel.add(tadd);
 
-
-
-        showdetails= new JButton("Show ");
-        showdetails.setBounds(150, 450, 100, 30);
-        showdetails.setFont(new Font("Verdana", Font.PLAIN, 14));
         update= new JButton("Update");
         update.setBounds(400, 450, 100, 30);
         update.setFont(new Font("Verdana", Font.PLAIN, 14));
         reset = new JButton("Reset");
         reset.setBounds(550, 450, 100, 30);
         reset.setFont(new Font("Verdana", Font.PLAIN, 14));
-            /*cancel = new JButton("Cancel");
-            cancel.setBounds(600, 500, 100, 30);
-            cancel.setFont(new Font("Verdana", Font.PLAIN, 14));*/
 
         tfId.addKeyListener(new KeyListener() {
             @Override
@@ -266,25 +227,15 @@ public class MainManagerGUI extends JFrame
             public void keyTyped(KeyEvent e) {}
 
         });
-          /* editPanel.add(showdetails);
-        showdetails.addActionListener(new ActionListener()
-            {
-                public void actionPerformed(ActionEvent e)
-                {
-                    showdetails();
-                }
-            });*/
         editPanel.add(update);
-        update.addActionListener(new ActionListener()
-        {
+        update.addActionListener(new ActionListener()        {
             public void actionPerformed(ActionEvent e)
             {
                 updatemethod();
             }
         });
         editPanel.add(reset);
-        reset.addActionListener(new ActionListener()
-        {
+        reset.addActionListener(new ActionListener()        {
             public void actionPerformed(ActionEvent e)
             {
                 tfId.setText("");
@@ -298,17 +249,8 @@ public class MainManagerGUI extends JFrame
                 tfPassword.setText("");
             }
         });
-            /*editPanel.add(cancel);
-            cancel.addActionListener(new ActionListener()
-            {
-                public void actionPerformed(ActionEvent e)
-                {
-                    cancelmethod();
-                }
-            });*/
-
-
     }
+
     public void Report()    {
         reportPanel.setBounds(251, 120, 1451, 629);
         reportPanel.setBackground(Color.WHITE);
@@ -322,7 +264,7 @@ public class MainManagerGUI extends JFrame
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_system", "Aress", "Aress@aress123");
+            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
             //reportPanel.setSize(1350,800);
             reportPanel.setBounds(251, 120, 1000, 800);
 
@@ -331,11 +273,11 @@ public class MainManagerGUI extends JFrame
             reportPanel.repaint();;
             reportPanel.revalidate();
 
-            FileInputStream in=new FileInputStream(new File("C:\\Users\\user\\eclipse-workspace\\hello\\sample.jrxml"));
+            FileInputStream in=new FileInputStream(new File("C:\\Users\\user\\eclipse-workspace\\hello\\ManagerReport.jrxml"));
             JasperDesign jd= JRXmlLoader.load(in);
 
             String sql;
-            sql = "select survey_responses.users_user_id,users.user_id, users.user_name,survey.survey_name, survey_responses.performance,survey_responses.comments from users,survey,survey_responses where role_name='manager'";
+            sql = " select survey_responses.emp_id,survey_responses.manager_id,users.username,questions.question,categories.category_name,survey_responses.rating,survey_responses.comment from survey_responses,users,categories,questions where users.user_id=survey_responses.manager_id and categories.category_id=survey_responses.cat_id and questions.question_id=survey_responses.question_id and users.username='harshad'";
             JRDesignQuery newQuery=new JRDesignQuery();
             newQuery.setText(sql);
             jd.setQuery(newQuery);
@@ -349,7 +291,7 @@ public class MainManagerGUI extends JFrame
             reportPanel.add(v);
 
             //JasperViewer.viewReport(j, false);
-            FileOutputStream os=new FileOutputStream(new File("D:\\reports\\demo1.pdf"));
+            FileOutputStream os=new FileOutputStream(new File("D:\\reports\\Manager report.pdf"));
             JasperExportManager.exportReportToPdfStream(j, os);
 
 
@@ -361,19 +303,6 @@ public class MainManagerGUI extends JFrame
 
     }
 
-
-
-
-
-
-    public void cancelmethod()    {
-        int res = JOptionPane.showConfirmDialog(null,
-                "Do you want to Exit?", "Select an Option...", JOptionPane.YES_NO_OPTION);
-        if (res == JOptionPane.YES_OPTION) {
-            editPanel.setVisible(false);
-        }
-
-    }
 
     public void encryptdecryptpwd(String str) {
         // Define XOR key
@@ -397,7 +326,6 @@ public class MainManagerGUI extends JFrame
         // System.out.println(outputString);
 
     }
-
     public void getValuefromGui() {
         id1=tfId.getText();
         Username = tfName.getText();
@@ -433,7 +361,7 @@ public class MainManagerGUI extends JFrame
 
         try {
             Connection connection= UtilityFunctions.createConnection();
-            p = connection.prepareStatement("select user_id from users where user_id='" + id1+ "'  and role_name='manager'  ");
+            p = connection.prepareStatement("select user_id from users where user_id='" + id1+ "'  and role='manager'  ");
             ResultSet rs = p.executeQuery();
 
             while (rs.next()) {
@@ -445,27 +373,17 @@ public class MainManagerGUI extends JFrame
             if(id1.equals(id2))
             {
                 connection= UtilityFunctions.createConnection();
-                p = connection.prepareStatement("select * from users where user_id='" + id1 + "' and role_name='manager'   ");
+                p = connection.prepareStatement("select * from users where user_id='" + id1 + "' and role='manager'   ");
                 ResultSet rs1 = p.executeQuery();
 
                 while (rs1.next()) {
                     id2=rs1.getString("user_id");
-                    nm=rs1.getString("user_name");
-                    em = rs1.getString("user_email");
+                    nm=rs1.getString("username");
+                    em = rs1.getString("email");
                     pass = rs1.getString("password");
-                    phno = rs1.getString("phone_no");
-                    rnm = rs1.getString("role_name");
+                    phno = rs1.getString("phno");
+                    rnm = rs1.getString("role");
                     System.out.println(rnm);
-                    gen=rs1.getString("gender");
-                    System.out.println(gen);
-                    if (gen.equals("Female")){
-                        male.setSelected(false);
-                        female.setSelected(true);
-                    } else {
-                        female.setSelected(false);
-                        male.setSelected(true);
-                    }
-                    addr=rs1.getString("address");
 
                     setvaluestogui();
 
@@ -498,7 +416,7 @@ public class MainManagerGUI extends JFrame
                     try {
                         Connection connection= UtilityFunctions.createConnection();
                         encryptdecryptpwd(pwd);
-                        String up = "update users set user_name='" + tfName.getText() + "',user_email='" + tfEmail.getText() + "' ,password='" + outputString + "',phone_no='" + tfPhone.getText()+ "',gender='" + Gval + "',address='" + tadd.getText() + "' where user_id='" +  tfId.getText() + "' ";
+                        String up = "update users set username='" + tfName.getText() + "',email='" + tfEmail.getText() + "' ,password='" + outputString + "',phno='" + tfPhone.getText()+ "' where user_id='" +  tfId.getText() + "' ";
                         p = connection.prepareStatement(up);
                         p.execute();
                         JOptionPane.showMessageDialog(f,
@@ -527,6 +445,10 @@ public class MainManagerGUI extends JFrame
                     "Check Password", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+
+    public static void main(String[] args) {
+        new MainManagerGUI();
     }
 
 
