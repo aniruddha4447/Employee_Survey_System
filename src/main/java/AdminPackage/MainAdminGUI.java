@@ -18,32 +18,26 @@ import java.util.regex.Pattern;
 public class MainAdminGUI extends JFrame {
     JFrame frame;
     JPanel buttonPanel, topPanel, mainPanel, editPanel, createPanel, pendingPanel;
-    JButton Create, Editprofile,Createsurvey,Pendingtask;
+    JButton Create, Editprofile,Createsurvey,Pendingtask,Report1;
     JLabel title;
 
-    public MainAdminGUI()
-    {
-        PanelExample();
-    }
 
 
 
 
 
-    Connection conn;
+
+
 
     String reg = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     // boolean result = email.matches(reg);
     String REG = "^(?=.*\\d)(?=\\S+$)(?=.*[@#$%^&+=])(?=.*[a-z])(?=.*[A-Z]).{8,10}$";
     final Pattern PATTERN = Pattern.compile(REG);
 
-   /* public void connection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/survey_portfolio", "Aress", "Aress@aress123");
-        System.out.println("Connected to Database");
-    }*/
 
-    public void PanelExample() {
+
+    public MainAdminGUI ()
+    {
         frame = new JFrame("Admin Module");
         buttonPanel = new JPanel();
         topPanel = new JPanel();
@@ -56,9 +50,10 @@ public class MainAdminGUI extends JFrame {
         Editprofile = new JButton("Edit Profile");
         Createsurvey = new JButton("Create Survey");
         Pendingtask = new JButton("Pending Task");
+        Report1 = new JButton("View Report");
 
 
-        // Panels Code
+
         frame.setLayout(null);
         frame.setExtendedState(MAXIMIZED_BOTH);
         scroll.setBounds(1421, 120, 20, 629);
@@ -70,12 +65,7 @@ public class MainAdminGUI extends JFrame {
         mainPanel.setBounds(251, 120, 1451, 629);
         mainPanel.setBackground(Color.WHITE);
 
-        //pending panel
-        /*
-        pendingPanel.setBounds(251, 120, 1451, 629);
-        mainPanel.setBackground(Color.LIGHT_GRAY);
-        */
-        // Buttons Code
+
 
         Create.setBounds(30, 150, 180, 40);
         Create.setBackground(Color.lightGray);
@@ -163,30 +153,86 @@ public class MainAdminGUI extends JFrame {
                 }
             }
         });
+        Report1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               //repor();
+            }
+        });
 
     }
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         MainAdminGUI gui = new MainAdminGUI();
-        gui.PanelExample();
-       // gui.connection();
+
     }
 
 
    public void Createu() throws SQLException, ClassNotFoundException {
         Createuser cu=new Createuser();
-       // cu.connection();
+
 
     }
 
     public void Editu() throws SQLException, ClassNotFoundException {
           Editprofile ep=new Editprofile();
-          // ep.connection();
+
     }
 
     public void survey() throws SQLException, ClassNotFoundException {
          MainClass s = new MainClass();
-        // ep.connection();
+
     }
+
+    /*public void Report()    {
+        reportPanel.setBounds(251, 120, 1451, 629);
+        reportPanel.setBackground(Color.WHITE);
+        reportPanel.setLayout(null);
+
+        JLabel EditTitle = new JLabel("Report");
+        EditTitle.setBounds(500, 10, 100, 20);
+        EditTitle.setVerticalAlignment(SwingConstants.TOP);
+        reportPanel.add(EditTitle);
+
+        try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
+            //reportPanel.setSize(1350,800);
+            reportPanel.setBounds(251, 120, 1000, 800);
+
+            HashMap para=new HashMap();
+            reportPanel.removeAll();
+            reportPanel.repaint();;
+            reportPanel.revalidate();
+
+            FileInputStream in=new FileInputStream(new File("C:\\Users\\user\\eclipse-workspace\\hello\\ManagerReport.jrxml"));
+            JasperDesign jd= JRXmlLoader.load(in);
+
+            String sql;
+            sql = " select survey_responses.emp_id,survey_responses.manager_id,users.username,questions.question,categories.category_name,survey_responses.rating,survey_responses.comment from survey_responses,users,categories,questions where users.user_id=survey_responses.manager_id and categories.category_id=survey_responses.cat_id and questions.question_id=survey_responses.question_id and users.username='harshad'";
+            JRDesignQuery newQuery=new JRDesignQuery();
+            newQuery.setText(sql);
+            jd.setQuery(newQuery);
+
+            JasperReport jr= JasperCompileManager.compileReport(jd);
+            JasperPrint j= JasperFillManager.fillReport(jr, para, connection);
+
+
+            JRViewer v = new JRViewer(j);
+            reportPanel.setLayout(new BorderLayout());
+            reportPanel.add(v);
+
+            //JasperViewer.viewReport(j, false);
+            FileOutputStream os=new FileOutputStream(new File("D:\\reports\\Manager report.pdf"));
+            JasperExportManager.exportReportToPdfStream(j, os);
+
+
+        } catch (Exception ae) {
+
+            ae.printStackTrace();
+
+        }
+
+    }*/
 
 
 }

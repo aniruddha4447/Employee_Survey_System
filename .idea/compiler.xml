@@ -9,5 +9,8 @@
         <module name="ywz" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ywz" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

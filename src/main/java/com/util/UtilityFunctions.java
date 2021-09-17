@@ -25,7 +25,7 @@ public class UtilityFunctions {
 
     static public Connection createConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey database", "Aress", "Aress@aress123");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
         return conn;
     }
 

@@ -1,7 +1,7 @@
 package LoginPage;
 
 import AdminPackage.MainAdminGUI;
-import ManagerPackage.MainManagerGUI;
+//import ManagerPackage.MainManagerGUI;
 import UserPackage.MainUserGUI;
 import com.buttons.AllButtonsLoginPage;
 import com.framesAndPanels.AllFrameLoginPage;
@@ -131,24 +131,24 @@ public void initComponents(){
 
             if(roleNameFetching.next())
             {
-                    String role_name= roleNameFetching.getString(1);
-                    System.out.println(role_name);
-                    if(role_name.equalsIgnoreCase("admin"))
+                    String role= roleNameFetching.getString(1);
+                    System.out.println(role);
+                    if(role.equalsIgnoreCase("admin"))
                     {
                         MainAdminGUI mainAdminGUI=new MainAdminGUI();
-                        mainAdminGUI.setVisible(true);
+                      //  mainAdminGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
-                    else if(role_name.equalsIgnoreCase("developer"))
+                    else if(role.equalsIgnoreCase("developer"))
                     {
                         MainUserGUI mainUserGUI=new MainUserGUI();
-                        mainUserGUI.setVisible(true);
+                        //mainUserGUI.setVisible(true);
                         loginFrame.setVisible(false);
                         
                     }
-                    else if(role_name.equalsIgnoreCase("manager"))
+                    else if(role.equalsIgnoreCase("manager"))
                     {
-                        MainManagerGUI mainManagerGUI=new MainManagerGUI();
+                       // MainManagerGUI mainManagerGUI=new MainManagerGUI();
                         //mainManagerGUI.setVisible(true);
                         loginFrame.setVisible(false);
                     }
