@@ -1,13 +1,11 @@
 package CreateSurvey;
 
 import javax.swing.*;
+import javax.swing.plaf.nimbus.State;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class AddCat extends JFrame {
 
@@ -15,11 +13,11 @@ public class AddCat extends JFrame {
     JTextField EnterCategoryTextField;
     JButton SaveButton;
     JFrame frame;
-
+    //public int tempCatId;
     public java.sql.Connection c;
     public Statement s;
     public PreparedStatement p;
-
+    long tempCatLong =0L;
 
     public AddCat() {
 
@@ -50,19 +48,39 @@ public class AddCat extends JFrame {
 
         SaveButton.addActionListener(new ActionListener(  )
         {
+            ResultSet resultset;
             public void actionPerformed(ActionEvent e) {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_system", "Aress", "Aress@aress123");
-                    s = c.createStatement();
+                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
 
-                    String str = " insert into category(category) values('" + EnterCategoryTextField.getText() + "')";
+                    String str = " insert into categories(category_name) values('" + EnterCategoryTextField.getText() + "')";
+
+                  /*  p = c.prepareStatement(str, Statement.RETURN_GENERATED_KEYS);
+                    int rownum = p.executeUpdate();
+                    resultset = p.getGeneratedKeys();
+                    if( resultset.next()) {
+                        System.out.println("Record inserted successfully");
+                        tempCatLong = resultset.getInt(1);
+                    }*/
                     PreparedStatement p = c.prepareStatement(str);
 
-                    boolean x = false;
-                    if (x == p.execute())
+                  boolean x = false;
+                    if (x == p.execute()) {
                         System.out.println("Record Successfully Inserted");
-                    else
+
+
+
+                        /*PreparedStatement p1 = c.prepareStatement("SELECT LAST_INSERT_ID()");
+                        tempLastInsertId = p1.getGeneratedKeys();
+                        if (tempLastInsertId.next()) {
+                            TEMPCATID=tempLastInsertId.getInt(1);
+                            System.out.println(TEMPCATID);
+                        }*/
+
+                    }
+
+                        else
                         System.out.println("Insert Failed");
                 } catch (SQLException | ClassNotFoundException ex) {
                     ex.printStackTrace();

@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
+import static java.lang.Integer.parseInt;
 
 public class AddQue extends JFrame
 {
@@ -20,11 +19,10 @@ public class AddQue extends JFrame
     public java.sql.Connection c;
     public Statement s;
     public PreparedStatement p;
+    long tempQuesLong=0L;
 
-
-    public AddQue()
-    {
-
+    public AddQue() throws SQLException {
+    MainClass mainClass=new MainClass();
         JPanel panel = new JPanel();
         panel.setBackground(Color.gray);
         panel.setBounds(30,30,720,400);
@@ -50,20 +48,42 @@ public class AddQue extends JFrame
         panel.add(EnterQuestionTextField);
         panel.add(SaveButton);
 
-        SaveButton.addActionListener(new ActionListener(  )
+        SaveButton.addActionListener(new ActionListener()
         {
+            ResultSet resultset;
             public void actionPerformed(ActionEvent e) {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_system", "Aress", "Aress@aress123");
+                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/survey_mgmt", "Aress", "Aress@aress123");
                     s = c.createStatement();
 
+
                     String str = " insert into questions(question) values('" + EnterQuestionTextField.getText() + "')";
-                    PreparedStatement p = c.prepareStatement(str);
+
+                    p = c.prepareStatement(str, Statement.RETURN_GENERATED_KEYS);
+                    int rownum = p.executeUpdate();
+                    resultset = p.getGeneratedKeys();
+                    if(  resultset.next()) {
+                        System.out.println("Record inserted successfully");
+                        tempQuesLong = resultset.getInt(1);
+                    }
+                    //PreparedStatement p = c.prepareStatement(str);
+
+
 
                     boolean x = false;
                     if (x == p.execute())
-                        System.out.println("Record Successfully Inserted");
+                    {
+
+                        String insertDataIntoCatQue="insert into category_question values (category_id="+ mainClass.fetchingCatId +", question_id="+(int)tempQuesLong+")";
+                        PreparedStatement pAddRelationalTable=c.prepareStatement(insertDataIntoCatQue);
+                        if(pAddRelationalTable.execute())
+                        {
+                            System.out.println("Successfull");
+                        }
+                        else
+                            System.out.println("not successfull");
+                    }
                     else
                         System.out.println("Insert Failed");
                 } catch (SQLException | ClassNotFoundException ex) {
